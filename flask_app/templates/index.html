@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="/" method="POST" >
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    
+        <p><label for="name">Name:</label>
+        <input type="text" name="name">
+
+        <p><label for="location" name="location">Dojo Location:</label>
+        <select name="location">
+            <option>San Jose</option>
+            <option>Seattle</option>
+            <option>Portland</option>
+            <option>San Francisco</option>
+            <option>Los Angeles</option>
+        </select>
+
+        <p><label for="language">Favorite Language:</label>
+        <select name="language">
+            <option>C#</option>
+            <option>Java</option>
+            <option>JavsScript</option>
+            <option>Python</option>
+            <option>TypeScript</option>
+        </select>
+
+        <p><label for="comment">Comments:</label><br />
+        <textarea rows="2" columns="30" name="comment"></textarea>
+
+        <p><button>Submit</button>
+    </form>
+
+</body>
+</html>
